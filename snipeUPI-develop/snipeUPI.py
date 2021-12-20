@@ -11,7 +11,7 @@ isnvpatovalid = b'false' # address does not exist
 
 
 def keyboardInterruptHandler(signal, frame):
-    print("Interrupted! Quitting...".format(signal))
+    print("Interrupted! Quitting... Closing the payment gateway...".format(signal))
     exit(0)
 
 
@@ -20,7 +20,7 @@ signal.signal(signal.SIGNIT, keyboardInterruptHandler)
 
 # headers 
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/10.0'
+    'User-Agent': 'Mozilla/5.0 (Windows NT x.y; rv:10.0) Gecko/20100101 Firefox/91.0'
 }
 
 # BASE_URI = https://www.redbus.in/Pay/checkCustomerVpa
@@ -33,7 +33,7 @@ def single_query(sAddress):
         print(sAddress + " already exists.") # print YES
         sys.exit()
     elif isnvpatovalid in sr.content: # if VPA does not exist
-        print(sAddress + " already exists.") # print NO
+        print(sAddress + "It already exists.") # print NO
         sys.exit()
 
 
@@ -48,7 +48,7 @@ def multiple_queries(infile):
             mPayload = {'pgTypeId': '37', 'vpa': mAddress}
             mr = requests.post('https://www.redbus.in/Pay/checkCustomerVpa', params=mPayload, headers=headers)
             if isvpavalid in mr.content: # if VPA does not exist
-                print(mAddress = " is available!") # print NO
+                print(mAddress = "It is available!") # print NO
 
 
 
@@ -68,7 +68,7 @@ if __name__ == '__main__':
 
 
     if len(sys.argv) == 1:
-        print("Please provide an argument! [use -h for help]")
+        print("Please provide a valid argument! [use -h for help]")
         sys.exit()
 
     elif address:

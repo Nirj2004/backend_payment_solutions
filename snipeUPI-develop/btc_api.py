@@ -25,7 +25,7 @@ def error_to_json_response(err: ErrorResponse):
 
 @app.errorhandler(InvalidUsage)
 def handle_user_exception(e):
-    """Return JSON instead of HTML for InvalidUsage errors."""
+    """Return JSON instead of HTML for Invalid Usage errors."""
 
 
 
@@ -35,7 +35,7 @@ def handle_user_exception(e):
 
 @app.errorhandler(InsufficientFunds)
 def handle_wallet_exception(e): 
-    """Return JSON instead of HTML for InsufficientFunds errors."""
+    """Return JSON instead of HTML for Insufficient Funds errors."""
 
 
     error = ErrorResponse(
@@ -50,7 +50,7 @@ def handle_wallet_exception(e):
 
 @app.errorhandler(InternalServerError)
 def handle_500(e):
-    """Return JSON instead of HTML for InternalServerError."""
+    """Return JSON instead of HTML for Internal Server Error."""
 
 
     # if original is None, e represents direct 500 error, such as abort(500)
@@ -105,7 +105,7 @@ def payment_transaction():
 
 
     response = process_payment_tx_request(data)
-    return jsonify(response,to_dict())
+    return jsonify(response, to_dict())
 
 def app_run():
     use_debugger = app.debug

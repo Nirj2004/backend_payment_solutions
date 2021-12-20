@@ -25,13 +25,13 @@ class MainActivity : AppCompactActivity(), AnkoLogger {
 
     private fun startUpiPayment(){
         val payment = PaymentDetail(
-            vpa="wangsun@upi",
-            name ="Wangsun Hakhun",
+            vpa="Username@upi",
+            name ="Username",
             payeeMerchantCode = "",
             //tanId = "",
             txnRefId = "",
-            description = "description",
-            amount = "2.00")
+            description = "Description of the current transaction",
+            amount = "")
 
 
 

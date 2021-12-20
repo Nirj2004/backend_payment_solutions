@@ -40,4 +40,3 @@ class ErrorResponse:
 
     def to_dict(self):
         return asdict(self)
-        

@@ -45,3 +45,7 @@ def get_direct_download_link(url):
         return "This file cannot be downloaded at this moment!"
     logger.debug(dl_url)
     return dl_url
+
+    # for more information go to: https://www.npci.org.in/what-we-do/upi/product-overview
+    # or go to: https://www.bhimupi.org.in
+    

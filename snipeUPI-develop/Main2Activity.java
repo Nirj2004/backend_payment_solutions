@@ -55,19 +55,19 @@ private void startUpiPayment() {
            .setCallBackListener(new UpiPayment.OnUpipaymentListener() {
                @Override
                public void onSubmitted(@NotNull TransactionDetails data) {
-                   Toast.makeText(Main2Activity.this, "transaction pending: " + message, Toast.LENGTH_LONG).show();
+                   Toast.makeText(Main2Activity.this, "transaction pending!" + message, Toast.LENGTH_LONG).show();
                }
                
 
                @Override
                public void onError(@NotNull String message) {
-                   Toast.makeText(Main2Activity.this, "transaction failed : " + message, Toast.LENGTH_LONG).show();
+                   Toast.makeText(Main2Activity.this, "transaction failed!" + message, Toast.LENGTH_LONG).show();
                }
 
 
                @Override
                public void onSuccess(@NotNull TransactionDetails data) {
-                   Toast.makeText(Main2Activity.this, "transaction success: " + data.toString(), Toast.LENGTH_LONG).show();
+                   Toast.makeText(Main2Activity.this, "transaction success!" + data.toString(), Toast.LENGTH_LONG).show();
                }
            }).pay();
 }

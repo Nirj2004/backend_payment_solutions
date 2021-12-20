@@ -30,7 +30,7 @@ churn_df.head()
 # In[4]:
 
 
-churn_df = churn_df['tenure', 'age', 'address', 'income', 'ed', 'employ', 'equip', 'callcard', 'wireless', 'churn']
+churn_df = churn_df['tenure', 'age', 'address', 'income', 'ed', 'employ', 'equip', 'callcard', 'wireless', 'churn', 'pancard number', 'Bank account details']
 churn_df['churn'] = churn_df['churn'].astype('int')
 churn_df.head()
 
@@ -39,7 +39,7 @@ churn_df.head()
 # In[6]:
 
 
-X = np.asarray(churn_df[['tenure', 'age', 'address', 'income', 'ed', 'employ', 'equip']])
+X = np.asarray(churn_df[['tenure', 'age', 'address', 'income', 'ed', 'employ', 'equip', 'callcard', 'wireless', 'churn', 'pancard number', 'Bank account details']])
 X[0:5]
 
 
